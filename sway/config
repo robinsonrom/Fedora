@@ -1,16 +1,40 @@
+# Set mod key to "Windows" key
+set $mod Mod4
+
+# Various looks related stuff
+font pango: Jetbrainsmono 10
+gaps inner 7px
+gaps outer 1px
+smart_gaps on
+
+# Numlock on
+input <identifier> xkb_numlock enabled
+
 # Vim style direction keys
 set $left h
 set $down j
 set $up k
 set $right l
 
+# Floating windows
+for_window {
+[app_id="qalculate-gtk"] floating enable
+[window_role="pop-up"] floating enable
+[window_role="dialog"] floating enable
+[window_type="dialog"] floating enable
+[class="Steam"] floating enable
+[class="Steam"] title="^Steam$"] floating disable
+[class="^.*"] border pixel 2
+}
+
 # Default apps
 set $term foot
-set $menu rofi -show drun -show-icon
-exec wayba
+set $menu rofi -show drun -show-icons
+exec waybar
+exec /usr/share/sway/scripts/inactive-windows-transparency.py --opacity 0.6
 
 # Wallpaper
-output * bg ~/Pictures/Fedora_Linux_tech_logo-2196845.png fill
+output * bg ~/Pictures/gtp_black.jpg fill
 output HDMI-A-1 resolution 1920x1080 position 1920,0
 
 # Keybinds
@@ -19,8 +43,8 @@ bindsym $mod+d exec $menu
 bindsym $mod+c kill
 floating_modifier $mod normal
 bindsym $mod+Shift+c reload
-bindsym $mod+Shift+r restart
-bindsym $mod+Shift+m exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+bindsym $mod+m exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+bindsym $mod+Shift+e exec thunar
 # Move Focus
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
@@ -75,14 +99,5 @@ bindsym $mod+f fullscreen
 bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
-
-# Special keys to adjust volume via PulseAudio
-bindsym --locked XF86AudioMute exec pactl set-sink-mute \@DEFAULT_SINK@ toggle
-bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume \@DEFAULT_SINK@ -5%
-bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume \@DEFAULT_SINK@ +5%
-bindsym --locked XF86AudioMicMute exec pactl set-source-mute \@DEFAULT_SOURCE@ toggle
-# Special keys to adjust brightness via brightnessctl
-bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
-bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
 
 include ~/.config/sway/config.d/*
