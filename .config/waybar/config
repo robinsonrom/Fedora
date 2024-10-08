@@ -38,6 +38,7 @@
 		"disk",
 		"custom/left-arrow-light",
 		"custom/left-arrow-dark",
+		"pulseaudio",
 		"tray",
         "custom/power",
 	],
@@ -46,6 +47,7 @@
 	"format": "{}",
 	"interval": 1200,
 	"exec": "~/.config/polybar/modules/weather.py",
+	"on-click": "firefox https://openweathermap.org/city/4833387 &",
 	},	
 	"custom/left-arrow-dark": {
 		"format": "",
