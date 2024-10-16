@@ -5,9 +5,9 @@
 	"position": "top",
 
 	"modules-left": [
-		"sway/workspaces",
+		"hyprland/workspaces",
 		"custom/right-arrow-dark",
-        "sway/window"
+        "hyprland/window"
 	],
 	"modules-center": [
 		"custom/left-arrow-dark",
@@ -32,23 +32,21 @@
 		"cpu",
 		"custom/left-arrow-light",
 		"custom/left-arrow-dark",
-		"battery",
-		"custom/left-arrow-light",
-		"custom/left-arrow-dark",
 		"disk",
 		"custom/left-arrow-light",
 		"custom/left-arrow-dark",
 		"pulseaudio",
 		"tray",
-        "custom/power",
+		"power",
 	],
 	
 	"custom/weather": {
 	"format": "{}",
 	"interval": 1200,
 	"exec": "~/.config/polybar/modules/weather.py",
-	"on-click": "firefox https://openweathermap.org/city/4833387 &",
-	},	
+//	"on-click": "firefox https://openweathermap.org/city/4833387 &",
+	"on-click": "flatpak run io.github.amit9838.mousam &",
+},	
 	"custom/left-arrow-dark": {
 		"format": "",
 		"tooltip": false
@@ -127,7 +125,7 @@
 	},
     "custom/power": {
         "format" : "⏻ ",
-		"on-click": "swaynag -t warning -m 'Power Menu Options' -b 'Shutdown'  'shutdown -h now' -b 'Restart' 'shutdown -r now' -b 'Logout' 'swaymsg exit' -b 'Hibernate' 'systemctl hibernate' --background=#005566 --button-background=#009999 --button-border=#002b33 --border-bottom=#002b33"
+		"on-click": "hyprctl exit"
         },
     "return-type": "json",
     "exec-if": "which swaync-client",

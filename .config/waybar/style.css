@@ -1,21 +1,21 @@
 * {
-	font-size: 10px;
-	font-family: monospace;
+	font-size: 13px;
+	font-family: Eirian;
 }
 
 window#waybar {
-	background: #292b2e;
+	background: #0F2B48;
 	color: #fdf6e3;
 }
 
 #custom-right-arrow-dark,
 #custom-left-arrow-dark {
-	color: #1a1a1a;
+	color: #0F1F33;
 }
 #custom-right-arrow-light,
 #custom-left-arrow-light {
-	color: #292b2e;
-	background: #1a1a1a;
+	color: #0F2B48;
+	background: #0F1F33;
 }
 
 #workspaces,
@@ -29,7 +29,7 @@ window#waybar {
 #battery,
 #disk,
 #tray {
-	background: #1a1a1a;
+	background: #0F1F33;
 }
 
 #workspaces button {
@@ -44,8 +44,8 @@ window#waybar {
 	text-shadow: inherit;
 }
 #workspaces button:hover {
-	background: #1a1a1a;
-	border: #1a1a1a;
+	background: #0F1F33;
+	border: #0F1F33;
 	padding: 0 3px;
 }
 
