@@ -21,7 +21,6 @@
         "custom/right-arrow-dark",
         "custom/right-arrow-light",
         "custom/weather",
-		"custom/right-arrow-light",
         "custom/right-arrow-dark"
 	],
 	"modules-right": [
@@ -37,14 +36,15 @@
 		"custom/left-arrow-dark",
 		"pulseaudio",
 		"tray",
-		"power",
+		"custom/power",
 	],
 	
 	"custom/weather": {
-	"format": "{}",
+	"format": "{} ",
 	"interval": 1200,
 	"exec": "~/.config/polybar/modules/weather.py",
 //	"on-click": "firefox https://openweathermap.org/city/4833387 &",
+//	uncomment above line & comment below line, if mousam flatpak not installed
 	"on-click": "flatpak run io.github.amit9838.mousam &",
 },	
 	"custom/left-arrow-dark": {
@@ -124,8 +124,8 @@
 		"icon-size": 20
 	},
     "custom/power": {
-        "format" : "⏻ ",
-		"on-click": "hyprctl exit"
+        "format" : " ⏻ ",
+		"on-click": "~/.config/rofi/applets/bin/powermenu.sh"
         },
     "return-type": "json",
     "exec-if": "which swaync-client",

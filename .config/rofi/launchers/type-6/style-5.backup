@@ -22,10 +22,10 @@ configuration {
 /*****----- Global Properties -----*****/
 * {
     font:                        "MonofurNerdFont 12";
-    background:                  #0F1F33;
-    background-alt:              #335560;
+    background:                  #231419;
+    background-alt:              #2D1E23;
     foreground:                  #FFFFFF;
-    selected:                    #428550;
+    selected:                    #426647;
     active:                      #2E3F34;
     urgent:                      #D08261;
 }
@@ -60,7 +60,8 @@ mainbox {
 imagebox {
     padding:                     20px;
     background-color:            transparent;
-    background-image:		 url("~/.config/rofi/images/retic.jpg", height);
+/*  background-image:            url("~/.config/rofi/images/e.jpg", height); */
+    background-image:		 url("~/Pictures/gtp.jpg", height);
     orientation:                 vertical;
     children:                    [ "inputbar", "dummy", "mode-switcher" ];
 }
@@ -126,7 +127,7 @@ button selected {
 listview {
     enabled:                     true;
     columns:                     1;
-    lines:                       10;
+    lines:                       8;
     cycle:                       true;
     dynamic:                     true;
     scrollbar:                   false;
@@ -135,7 +136,7 @@ listview {
     fixed-height:                true;
     fixed-columns:               true;
     
-    spacing:                     5px;
+    spacing:                     10px;
     background-color:            transparent;
     text-color:                  @foreground;
     cursor:                      "default";
