@@ -7,20 +7,36 @@
 	"modules-left": [
 		"hyprland/workspaces",
 		"custom/right-arrow-dark",
-       		"hyprland/window"
+        "hyprland/window"
 	],
 	"modules-center": [
-		"clock",
-        	"custom/weather"
+		"custom/left-arrow-dark",
+		"clock#1",
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
+		"clock#3",
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
+		"clock#2",
+        "custom/right-arrow-dark",
+        "custom/right-arrow-light",
+        "custom/weather",
+        "custom/right-arrow-dark"
 	],
 	"modules-right": [
 		"custom/left-arrow-dark",
 		"memory",
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
 		"cpu",
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
 		"disk",
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
 		"pulseaudio",
 		"tray",
-		"custom/power"
+		"custom/power",
 	],
 	
 	"custom/weather": {
@@ -48,30 +64,18 @@
 		"tooltip": false
 	},
 
-
-	"clock": {
-		"format": "{:%a  %r  %b %d, %Y}",
-		  "tooltip-format": "<tt><small>{calendar}</small></tt>",
-		  "calendar": {
-		    "mode"          : "month",
-		    "mode-mon-col"  : 3,
-		    "on-scroll"     : 1,
-		    "on-click-right": "mode",
-		    "format": {
-			"months":     "<span color='#cceedd'><b>{}</b></span>",
-			"days":       "<span color='#ccffee'><b>{}</b></span>",
-			"weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
-			"weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
-			"today":      "<span color='#33ffbb'><b><u>{}</u></b></span>"
-		    }
-		},
-		"actions": {
-		  "on-click-right": "mode",
-		  "on-click-forward": "tz_up",
-		  "on-click-backward": "tz_down",
-		  "on-scroll-up": "shift_up",
-		  "on-scroll-down": "shift_down"
-		}
+	"clock#1": {
+		"format": "{:%a}",
+		"tooltip": false
+	},
+	"clock#2": {
+		"format": "{:%r}",
+		"interval": 1,
+		"tooltip": false
+	},
+	"clock#3": {
+		"format": "{:%b %d, %Y}",
+		"tooltip": false
 	},
 
 	"pulseaudio": {
@@ -86,7 +90,7 @@
 			]
 		},
 		"scroll-step": 5,
-		"on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+		"on-click": "pamixer -t",
 		"on-click-right": "pavucontrol"
 	},
 	"memory": {
