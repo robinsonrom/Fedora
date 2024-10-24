@@ -19,7 +19,9 @@ configuration {
 /*	cache-dir: ;*/
 	steal-focus: false;
 /*	dpi: -1;*/
-
+	hover-select: true;
+	me-select-entry: "";
+	me-accept-entry: [ MousePrimary ];
 	/*---------- Matching setting ----------*/
 	matching: "normal";
 	tokenize: true;
