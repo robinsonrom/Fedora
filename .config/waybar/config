@@ -10,8 +10,10 @@
        		"hyprland/window"
 	],
 	"modules-center": [
+		"custom/left-arrow-dark",
 		"clock",
-        	"custom/weather"
+        	"custom/weather",
+		"custom/right-arrow-dark"
 	],
 	"modules-right": [
 		"custom/left-arrow-dark",
@@ -35,15 +37,7 @@
 		"format": "",
 		"tooltip": false
 	},
-	"custom/left-arrow-light": {
-		"format": "",
-		"tooltip": false
-	},
 	"custom/right-arrow-dark": {
-		"format": "",
-		"tooltip": false
-	},
-	"custom/right-arrow-light": {
 		"format": "",
 		"tooltip": false
 	},
@@ -71,7 +65,8 @@
 		  "on-click-backward": "tz_down",
 		  "on-scroll-up": "shift_up",
 		  "on-scroll-down": "shift_down"
-		}
+		},
+		"interval": 1,
 	},
 
 	"pulseaudio": {

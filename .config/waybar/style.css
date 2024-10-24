@@ -4,7 +4,7 @@
 }
 
 window#waybar {
-	background:shade(alpha(@theme_bg_color, 0.7), 1.25);
+	background:shade(alpha(@theme_bg_color, 0.6), 1);
 	color: #fdf6e3;
 }
 
@@ -50,14 +50,12 @@ window#waybar {
 
 #clock {
 	color: #18c309;
-	padding: 0 17px;
-	border-radius: 12px;
+	padding: 0 10px;
 }
 
 #custom-weather {
 	color: #268bd2;
-	border-radius: 12px;
-	padding: 0 15px;
+	padding: 0 10px;
 }
 
 #memory {
