@@ -9,12 +9,21 @@ window#waybar {
 }
 
 #custom-left-arrow-dark {
-	color: @theme_base_color;;
+	color: @theme_base_color;
+	background:shade(alpha(@theme_bg_color, 0.8), 1);
+}
+#custom-left-arrow-light {
+	color:shade(alpha(@theme_bg_color, 0.8), 1);
+	background: shade(alpha(@theme_bg_color, 0), 1);
 }
 #custom-right-arrow-dark {
 	color: @theme_base_color;
+	background: shade(alpha(@theme_bg_color, 0.8), 1);
 }
-
+#custom-right-arrow-light {
+	color:shade(alpha(@theme_bg_color, 0.8), 1);
+	background: shade(alpha(@theme_bg_color, 0), 1);
+}
 #workspaces,
 #clock,
 #custom-weather,

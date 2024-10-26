@@ -7,15 +7,19 @@
 	"modules-left": [
 		"hyprland/workspaces",
 		"custom/right-arrow-dark",
-       		"hyprland/window"
+		"custom/right-arrow-light",
+       		"hyprland/window",
 	],
 	"modules-center": [
+		"custom/left-arrow-light",
 		"custom/left-arrow-dark",
 		"clock",
         	"custom/weather",
-		"custom/right-arrow-dark"
+		"custom/right-arrow-dark",
+		"custom/right-arrow-light"
 	],
 	"modules-right": [
+		"custom/left-arrow-light",
 		"custom/left-arrow-dark",
 		"memory",
 		"cpu",
@@ -37,14 +41,24 @@
 		"format": "",
 		"tooltip": false
 	},
+
+	"custom/left-arrow-light": {
+		"format": "",
+		"tooltip": false
+	},
+
 	"custom/right-arrow-dark": {
 		"format": "",
 		"tooltip": false
 	},
 
+	"custom/right-arrow-light": {
+		"format": "",
+		"tooltip": false
+	},
 
 	"clock": {
-		"format": "{:%a  %r  %b %d, %Y}",
+		"format": "{:%r  %a  %b %d, %Y}",
 		  "tooltip-format": "<tt><small>{calendar}</small></tt>",
 		  "calendar": {
 		    "mode"          : "month",
