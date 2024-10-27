@@ -4,24 +4,25 @@
 }
 
 window#waybar {
-	background:shade(alpha(@theme_bg_color, 0.6), 1);
+	background:shade(alpha(@theme_bg_color, 0.5), 1);
 	color: #fdf6e3;
+	border: 3px solid @theme_bg_color
 }
 
 #custom-left-arrow-dark {
 	color: @theme_base_color;
-	background:shade(alpha(@theme_bg_color, 0.8), 1);
+	background:shade(alpha(@theme_bg_color, 0.7), 1);
 }
 #custom-left-arrow-light {
-	color:shade(alpha(@theme_bg_color, 0.8), 1);
+	color:shade(alpha(@theme_bg_color, 0.7), 1);
 	background: shade(alpha(@theme_bg_color, 0), 1);
 }
 #custom-right-arrow-dark {
 	color: @theme_base_color;
-	background: shade(alpha(@theme_bg_color, 0.8), 1);
+	background: shade(alpha(@theme_bg_color, 0.7), 1);
 }
 #custom-right-arrow-light {
-	color:shade(alpha(@theme_bg_color, 0.8), 1);
+	color:shade(alpha(@theme_bg_color, 0.7), 1);
 	background: shade(alpha(@theme_bg_color, 0), 1);
 }
 #workspaces,
@@ -31,6 +32,7 @@ window#waybar {
 #memory,
 #cpu,
 #disk,
+#cava,
 #tray {
 	background: @theme_base_color;
 }
@@ -67,8 +69,12 @@ window#waybar {
 	padding: 0 10px;
 }
 
+#cava {
+	color: #bbbb21;
+}
+
 #memory {
-	color: #2aa198;
+	color: #b58900;
 	padding: 0 10px;
 }
 #cpu {
@@ -76,7 +82,7 @@ window#waybar {
 	padding: 0 10px;
 }
 #disk {
-	color: #b58900;
+	color: #2aa198;
 	padding: 0 10px;
 }
 #pulseaudio {
