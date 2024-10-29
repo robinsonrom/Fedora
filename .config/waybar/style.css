@@ -81,6 +81,16 @@ window#waybar {
 	color: #6c71c4;
 	padding: 0 10px;
 }
+#temperature {
+	background: @theme_base_color;
+	color: #e53550;
+	padding: 0 10px;
+}
+#temperature.critical {
+	background: @theme_base_color;
+	color :#ff0000;
+	padding: 0 10px;
+}
 #disk {
 	color: #2aa198;
 	padding: 0 10px;
