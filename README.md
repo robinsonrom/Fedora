@@ -24,6 +24,8 @@ Wayland -
   -waybar
   -swaybg
 
+The retroarch used in the waybar config is the flatpak version
+
 Fonts -
   -JetBrainsMonoNerdFont
   -Eirian
