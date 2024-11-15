@@ -34,6 +34,21 @@ window#waybar {
 	background: shade(alpha(@theme_bg_color, 0), 1);
 }
 #workspaces,
+#custom-retroarch {
+	background: @theme_base_color;
+	padding: 0 2px;
+	color: #875fff;
+}
+#custom-firefox {
+	background: @theme_base_color;
+	padding: 0 2px;
+	color: #e37915;
+}
+#custom-steam {
+	background: @theme_base_color;
+	padding: 0 2px;
+	color: #61bdce;
+}
 #clock,
 #custom-weather,
 #pulseaudio,
@@ -82,7 +97,7 @@ window#waybar {
 }
 
 #memory {
-	color: #b58900;
+	color: #6c71c4;
 	padding: 0 10px;
 }
 #cpu {
@@ -91,7 +106,7 @@ window#waybar {
 }
 #temperature {
 	background: @theme_base_color;
-	color: #e53550;
+	color: #2aa198;
 	padding: 0 10px;
 }
 #temperature.critical {

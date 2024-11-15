@@ -6,6 +6,9 @@
 
 	"modules-left": [
 		"hyprland/workspaces",
+		"custom/steam",
+		"custom/retroarch",
+		"custom/firefox",
 		"custom/right-arrow-dark",
 		"custom/right-arrow-light",
 		"custom/right-arrow-lightest",
@@ -22,16 +25,14 @@
 		"custom/right-arrow-lightest"
 	],
 	"modules-right": [
-		"hyprland/submap"
+		"hyprland/submap",
 		"custom/left-arrow-lightest",
 		"custom/left-arrow-light",
 		"custom/left-arrow-dark",
 		"cava",
 		"pulseaudio",
 		"memory",
-		"cpu",
 		"temperature",
-		"disk",
 		"tray",
 		"custom/power"
 	],
@@ -40,6 +41,21 @@
 		"format": "Mode: {}",
 		"max-legnth": 8,
 		"tooltip": false
+	},
+	
+	"custom/retroarch" : {
+	 	"format":" 󰺷 ",
+		"on-click": "flatpak run org.libretro.RetroArch"
+	},
+
+	"custom/firefox" : {
+		"format": "  ",
+		"on-click": "firefox"
+	},
+
+	"custom/steam" : {
+		"format":"  ",
+		"on-click": "steam"
 	},
 	
 	"custom/weather": {
