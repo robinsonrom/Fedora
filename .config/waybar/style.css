@@ -27,10 +27,10 @@ window#waybar {
 }
 #custom-right-arrow-light {
 	color:shade(alpha(@theme_bg_color, 0.7), 1);
-	background: shade(alpha(@theme_bg_color, 0.6), 1.2);
+	background: shade(alpha(@theme_bg_color, 0.8), 1.2);
 }
 #custom-right-arrow-lightest {
-	color:shade(alpha(@theme_bg_color, 0.6), 1.2);
+	color:shade(alpha(@theme_bg_color, 0.8), 1.2);
 	background: shade(alpha(@theme_bg_color, 0), 1);
 }
 #workspaces,

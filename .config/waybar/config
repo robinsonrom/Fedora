@@ -9,6 +9,7 @@
 		"custom/steam",
 		"custom/retroarch",
 		"custom/firefox",
+		"custom/fileman",
 		"custom/right-arrow-dark",
 		"custom/right-arrow-light",
 		"custom/right-arrow-lightest",
@@ -45,18 +46,27 @@
 	
 	"custom/retroarch" : {
 	 	"format":" 󰺷 ",
-		"on-click": "flatpak run org.libretro.RetroArch"
+		"on-click": "flatpak run org.libretro.RetroArch",
+		"tooltip-format": "Retroarch"
 	},
 
 	"custom/firefox" : {
 		"format": "  ",
-		"on-click": "firefox"
+		"on-click": "firefox",
+		"tooltip-format": "Firefox"
 	},
 
 	"custom/steam" : {
 		"format":"  ",
-		"on-click": "steam"
+		"on-click": "steam",
+		"tooltip-format": "Steam"
 	},
+
+	"custom/fileman" : {
+		"format": "  ",
+		"on-click": "pcmanfm",
+		"tooltip-format": "File Manager"
+},
 	
 	"custom/weather": {
 	"format": "{} ",
