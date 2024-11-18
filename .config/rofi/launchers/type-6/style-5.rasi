@@ -22,8 +22,8 @@ configuration {
 /*****----- Global Properties -----*****/
 * {
     font:                        "MonofurNerdFont 12";
-    background:                  #0F1F33;
-    background-alt:              #335560;
+    background:                  #2C2F3E;
+    background-alt:              #2C2F3E;
     foreground:                  #FFFFFF;
     selected:                    #428550;
     active:                      #2E3F34;
