@@ -4,7 +4,7 @@
 }
 
 window#waybar {
-	background:shade(alpha(@theme_bg_color, 0.5), 1);
+	background:shade(alpha(@theme_bg_color, 0.3), 1);
 	color: #fdf6e3;
 	border: 3px solid @theme_bg_color
 }
@@ -34,6 +34,10 @@ window#waybar {
 	background: shade(alpha(@theme_bg_color, 0), 1);
 }
 #workspaces,
+#custom-logo {
+	background: @theme_base_color;
+	color: #217dfe;
+}
 #custom-retroarch {
 	background: @theme_base_color;
 	padding: 0 2px;
@@ -48,6 +52,11 @@ window#waybar {
 	background: @theme_base_color;
 	padding: 0 2px;
 	color: #61bdce;
+}
+#custom-fileman {
+	background: @theme_base_color;
+	padding: 0 2px;
+	color: #c5a340;
 }
 #clock,
 #custom-weather,

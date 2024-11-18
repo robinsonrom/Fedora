@@ -5,6 +5,7 @@
 	"position": "top",
 
 	"modules-left": [
+		"custom/logo",
 		"hyprland/workspaces",
 		"custom/steam",
 		"custom/retroarch",
@@ -44,6 +45,12 @@
 		"tooltip": false
 	},
 	
+	"custom/logo": {
+		"format": "  ",
+		"on-click": "~/.config/rofi/launchers/type-7/launcher.sh",
+		"tooltip": false
+	},
+
 	"custom/retroarch" : {
 	 	"format":" 󰺷 ",
 		"on-click": "flatpak run org.libretro.RetroArch",
