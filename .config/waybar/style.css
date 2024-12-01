@@ -4,39 +4,39 @@
 }
 
 window#waybar {
-	background:shade(alpha(@theme_bg_color, 0.3), 1);
+	background:shade(alpha(@theme_bg_color, 0.4), 1);
 	color: #fdf6e3;
-	border: 3px solid @theme_bg_color
+	border: 1px solid #114466
 }
 
 #custom-left-arrow-dark {
 	color: @theme_base_color;
-	background:shade(alpha(@theme_bg_color, 0.7), 1);
+	background:shade(alpha(@theme_bg_color, 1), 1.4);
 }
 #custom-left-arrow-light {
-	color:shade(alpha(@theme_bg_color, 0.7), 1);
-	background: shade(alpha(@theme_bg_color, 0.6), 1.2);
+	color:shade(alpha(@theme_bg_color, 1), 1.4);
+	background: shade(alpha(@theme_bg_color, 1), 1.8);
 }
 #custom-left-arrow-lightest {
-	color:shade(alpha(@theme_bg_color, 0.6), 1.2);
+	color:shade(alpha(@theme_bg_color, 1), 1.8);
 	background: shade(alpha(@theme_bg_color, 0), 1);
 }
 #custom-right-arrow-dark {
 	color: @theme_base_color;
-	background: shade(alpha(@theme_bg_color, 0.7), 1);
+	background: shade(alpha(@theme_bg_color, 1), 1.4);
 }
 #custom-right-arrow-light {
-	color:shade(alpha(@theme_bg_color, 0.7), 1);
-	background: shade(alpha(@theme_bg_color, 0.8), 1.2);
+	color:shade(alpha(@theme_bg_color, 1), 1.4);
+	background: shade(alpha(@theme_bg_color, 1), 1.8);
 }
 #custom-right-arrow-lightest {
-	color:shade(alpha(@theme_bg_color, 0.8), 1.2);
+	color:shade(alpha(@theme_bg_color, 1), 1.8);
 	background: shade(alpha(@theme_bg_color, 0), 1);
 }
 #workspaces,
 #custom-logo {
 	background: @theme_base_color;
-	color: #217dfe;
+	color: #319dff;
 }
 #custom-retroarch {
 	background: @theme_base_color;
@@ -51,7 +51,7 @@ window#waybar {
 #custom-steam {
 	background: @theme_base_color;
 	padding: 0 2px;
-	color: #61bdce;
+	color: #213d8e;
 }
 #custom-fileman {
 	background: @theme_base_color;
@@ -97,7 +97,7 @@ window#waybar {
 }
 
 #custom-weather {
-	color: #268bd2;
+	color: #007bed;
 	padding: 0 10px;
 }
 

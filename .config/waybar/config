@@ -78,7 +78,7 @@
 	"custom/weather": {
 	"format": "{} ",
 	"interval": 1200,
-	"exec": "~/.config/polybar/modules/weather.py",
+	"exec": "~/.config/waybar/weather.py",
 //	"on-click": "firefox https://openweathermap.org/city/4833387 &",
 //	uncomment above line & comment below line, if mousam flatpak not installed
 	"on-click": "flatpak run io.github.amit9838.mousam &",
@@ -176,7 +176,7 @@
 	},
 	"memory": {
 		"interval": 5,
-		"format": "Mem {}%"
+		"format": "{used:0.1f}G/{total:0.1f}G RAM"
 	},
 	"cpu": {
 		"interval": 5,
