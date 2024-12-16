@@ -6,7 +6,7 @@
 window#waybar {
 	background:shade(alpha(@theme_bg_color, 0.4), 1);
 	color: #fdf6e3;
-	border: 1px solid #114466
+	border: 2px solid #114466
 }
 
 #custom-left-arrow-dark {

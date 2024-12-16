@@ -85,7 +85,7 @@ configuration {
 
 	/*---------- Misc setting ----------*/
 	terminal: "rofi-sensible-terminal";
-	font: "Larabiefont 12";
+	font: "MonofurNerdFont 12";
 	sort: false;
 	threads: 0;
 	click-to-exit: true;
@@ -182,4 +182,5 @@ configuration {
 */
 }
 //@theme "/usr/share/rofi/themes/gruvbox-dark-soft.rasi"
-@theme "/usr/share/rofi/themes/sidebar.rasi"
+//@theme "/usr/share/rofi/themes/sidebar.rasi"
+@theme "/usr/share/rofi/themes/DarkBlue.rasi"

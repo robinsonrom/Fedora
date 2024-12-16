@@ -10,9 +10,10 @@
 /*****----- Configuration -----*****/
 configuration {
 	modi:                       "drun";
-    show-icons:                 false;
+    show-icons:                 true;
     display-drun:               "Applications";
-	drun-display-format:        ">>      {name} [<span weight='light' size='small'><i>({generic})</i></span>]";
+    drun-display-format:        ">>      {name} [<span weight='light' size='small'><i>({generic})</i></span>]";
+    icon-theme:			"Colorful-Dark-Icons";
 }
 
 /*****----- Global Properties -----*****/

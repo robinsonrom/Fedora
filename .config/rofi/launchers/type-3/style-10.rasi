@@ -12,7 +12,8 @@ configuration {
 	modi:                       "drun";
     show-icons:                 true;
     display-drun:               "";
-	drun-display-format:        "{name}";
+    drun-display-format:        "{name}";
+    icon-theme:			"Colorful-Dark-Icons";
 }
 
 /*****----- Global Properties -----*****/
