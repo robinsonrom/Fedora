@@ -19,12 +19,11 @@ configuration {
     window-format:              "{w} · {c} · {t}";
     icon-theme:			"Colorful-Dark-Icons";
     click-to-exit:		true;
-    font:			"MonofurNerdFont 12";
+    font:			"MonofurNerdFont 14";
 }
 
 /*****----- Global Properties -----*****/
-@import                          "shared/colors.rasi"
-@import                          "shared/fonts.rasi"
+@import                          "~/.config/rofi/applets/shared/colors.rasi"
 
 * {
     border-colour:               var(selected);
@@ -129,7 +128,7 @@ entry {
     background-color:            inherit;
     text-color:                  inherit;
     cursor:                      text;
-    placeholder:                 "Search...";
+    placeholder:                 " Search...";
     placeholder-color:           inherit;
 }
 num-filtered-rows {
@@ -160,8 +159,8 @@ case-indicator {
 /*****----- Listview -----*****/
 listview {
     enabled:                     true;
-    columns:                     1;
-    lines:                       10;
+    columns:                     2;
+    lines:                       8;
     cycle:                       true;
     dynamic:                     true;
     scrollbar:                   true;
