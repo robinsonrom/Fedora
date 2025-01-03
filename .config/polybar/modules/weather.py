@@ -38,7 +38,7 @@ try:
         CURRENT = icons_list[REQ.json()["weather"][0]["icon"]]
         TEMP = int(float(REQ.json()["main"]["temp"]))
         HUMIDITY = int(float(REQ.json()["main"]["humidity"]))
-        print(" {}  {}°{} | {}% Humidity".format(CURRENT, TEMP, UNIT_KEY, HUMIDITY))
+        print(" {} {}°{} | {}% Humidity".format(CURRENT, TEMP, UNIT_KEY, HUMIDITY))
     else:
         print("Error: BAD HTTP STATUS CODE " + str(REQ.status_code))
 except (ValueError, IOError):

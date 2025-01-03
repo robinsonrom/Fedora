@@ -16,6 +16,7 @@ for_window[class="steam"] floating enable
 for_window[class="steam" title="^Steam$"] floating disable
 for_window[instance="lxappearance"] floating enable
 for_window [instance="mousam"] floating enable
+for_window [instance="gpick"] floating enable
 
 # Change monitor focus
 bindsym $mod+Control+Left focus output left
@@ -24,15 +25,15 @@ bindsym $mod+Control+j focus output left
 bindsym $mod+Control+semicolon focus output right
 
 # Remove title bars                                                                                                             
-for_window [class="^.*"] border pixel 3 
+for_window [class="^.*"] border pixel 2 
 
 # class			border	backgr	text	indicator	child_border
-client.focused		#ccffee #335560	#ccddee #2e9ef4 	#335560	
-client.focused_inactive #999999 #779982	#ccddee	#2e9ef4		#222228
-client.unfocused	#999999 #779982 #ccddee #2e9ef4		#222228
+client.focused		#fbf1c7 #282828	#ebdbb2 #fbf1c7 	#fbf1c7	
+client.focused_inactive #a89984 #282828	#ebdbb2	#a89984		#a89984
+client.unfocused	#282828 #282828 #ebdbb2 #282828		#282828
 
 hide_edge_borders smart
-gaps inner 20px
+gaps inner 10px
 gaps outer 0px
 # smart_gaps on
 # Font for window titles. Will also be used by the bar unless a different font
@@ -41,10 +42,10 @@ font pango: JetBrainsMono 8
 
 # Script to start polybar
 exec_always --no-startup-id ~/polybar.sh
-exec --no-startup-id mpv ~/Downloads/owin31.wav
+#exec --no-startup-id mpv ~/Downloads/owin31.wav
 exec_always --no-startup-id picom -b
 # Wallpaper
-exec_always --no-startup-id  feh --bg-fill ~/Pictures/box-turtle.jpg --bg-fill ~/Pictures/Fc6-wallpaper-wide.jpg & 
+exec_always --no-startup-id  feh --bg-fill ~/Pictures/fedora/fedora-electric.jpg & 
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
@@ -96,28 +97,33 @@ bindsym $mod+i scratchpad show
 bindsym $mod+Shift+i move scratchpad
 
 # start a terminal
-bindsym $mod+q exec kitty
+bindsym $mod+q exec ghostty
+bindsym $mod+Return exec xfce4-terminal
 
 # kill focused window
 bindsym $mod+c kill
 
 # start file manager
 bindsym $mod+Shift+e exec thunar
-bindsym $mod+Shift+f exec kitty ranger
+bindsym $mod+Shift+f exec ghostty clifm
+
+bindsym $mod+w exec firefox
+
+bindsym $mod+r mode "resize"
 
 # start dmenu (a program launcher)
 bindsym $mod+Shift+d exec --no-startup-id dmenu_run
 # A more modern dmenu replacement is rofi:
-bindsym $mod+d exec "~/.config/rofi/launchers/type-5/launcher.sh &"
+bindsym $mod+d exec "~/.config/rofi/launchers/type-1/launcher.sh &"
 # There also is i3-dmenu-desktop which only displays applications shipping a
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -126,10 +132,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -138,7 +144,7 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym $mod+b split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -148,7 +154,7 @@ bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
+bindsym $mod+t layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
@@ -158,7 +164,8 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 # focus the parent container
-bindsym $mod+a focus parent
+bindsym $modbindsym $mod+w exec firefox
+bindsym $mod+a exec thunderbird+a focus parent
 
 # focus the child container
 bindsym $mod+Shift+a focus child
@@ -209,7 +216,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+m exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+m exec ~/.config/rofi/applets/bin/powermenui3.sh
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -219,10 +226,10 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+        bindsym j resize shrink width 5 px or 5 ppt
+        bindsym k resize grow height 5 px or 5 ppt
+        bindsym l resize shrink height 5 px or 5 ppt
+        bindsym semicolon resize grow width 5 px or 5 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
@@ -236,8 +243,6 @@ mode "resize" {
         bindsym $mod+r mode "default"
 }
 
-bindsym $mod+r mode "resize"
-
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-exec conky
+exec_always --no-startup-id pkill conky && sleep 0.5 && conky 
