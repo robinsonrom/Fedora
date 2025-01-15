@@ -1,62 +1,78 @@
 * {
-	font-size: 16px;
+	font-size: 18px;
 	font-family: MonofurNerdFont;
+	padding: 0;
+	margin: -1;
 }
 
 window#waybar {
 	background:shade(alpha(@theme_bg_color, 0.5), 1);
 	color: #fdf6e3;
-	border: 1px solid @theme_fg_color;
+	border: 0px solid @theme_fg_color;
 }
 
 #custom-left-arrow-dark {
 	color: @theme_base_color;
-	background:@warning_color;
+	/*background: shade(alpha(@theme_fg_color, 1), 0.5); */
+	background: #504945;
 }
 #custom-left-arrow-light {
-	color:@warning_color;
-	background: shade(alpha(@warning_color, 1), 0.8);
+	/*color: shade(alpha(@theme_fg_color, 1), 0.5); */
+	color: #504945;
+	background: #d5c4a1;
 }
 #custom-left-arrow-lightest {
-	color:shade(alpha(@warning_color, 1), 0.8);
+	/*color: @theme_fg_color; */
+	color: #d5c4a1;
 	background: shade(alpha(@theme_bg_color, 0), 1);
 }
 #custom-right-arrow-dark {
 	color: @theme_base_color;
-	background: @warning_color
+	/*background: shade(alpha(@theme_fg_color, 1), 0.5); */
+	background: #504945;
 }
 #custom-right-arrow-light {
-	color:@warning_color;
-	background: shade(alpha(@warning_color, 1), 0.8);
+	/* color: shade(alpha(@theme_fg_color, 1), 0.5); */
+	color: #504945;
+	background: #d5c4a1;
 }
 #custom-right-arrow-lightest {
-	color:shade(alpha(@warning_color, 1), 0.8);
+	/*color: @theme_fg_color; */
+	color: #d5c4a1;
 	background: shade(alpha(@theme_bg_color, 0), 1);
+}
+#custom-left-circle {
+	color: @theme_base_color;
+	background: transparent;
+}
+#custom-right-circle {
+	color: @theme_base_color;
+	background: transparent;
 }
 #workspaces,
 #custom-logo {
 	background: @theme_base_color;
-	color: #319dff;
+	color: #83a598;
 }
 #custom-retroarch {
 	background: @theme_base_color;
 	padding: 0 2px;
-	color: #875fff;
+	color: #b16286;
 }
 #custom-firefox {
 	background: @theme_base_color;
 	padding: 0 2px;
-	color: #e37915;
+	color: #fe8019;
 }
 #custom-steam {
 	background: @theme_base_color;
 	padding: 0 2px;
-	color: #213d8e;
+	color: #458588;
 }
 #custom-fileman {
 	background: @theme_base_color;
 	padding: 0 2px;
-	color: #c5a340;
+	color: #d5c4a1;
 }
 #clock,
 #custom-weather,
@@ -86,28 +102,30 @@ window#waybar {
 	border: @theme_base_color;
 	padding: 0 3px;
 }
-
+#workspaces button.active {
+	background: #504945
+}
 #window {
 	color: @theme_text_color;
 }
 
 #clock {
-	color: #18c309;
+	color: #d3869b;
 	padding: 0 10px;
 }
 
 #custom-weather {
-	color: #007bed;
+	color: #83a598;
 	padding: 0 10px;
 }
 
 #cava {
 	background: transparent;
-	color: #bbbb21;
+	color: #fabd2f;
 }
 
 #memory {
-	color: #6c71c4;
+	color: #fe8019;
 	padding: 0 10px;
 }
 #cpu {
@@ -116,12 +134,12 @@ window#waybar {
 }
 #temperature {
 	background: @theme_base_color;
-	color: #2aa198;
+	color: #689d6a;
 	padding: 0 10px;
 }
 #temperature.critical {
 	background: @theme_base_color;
-	color :#ff0000;
+	color :#fb4934;
 	padding: 0 10px;
 }
 #disk {
@@ -129,7 +147,7 @@ window#waybar {
 	padding: 0 10px;
 }
 #pulseaudio {
-	color: #bbbb21;
+	color: #fabd2f;
 	padding: 0 10px;
 }
 #custom-power {
