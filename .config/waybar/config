@@ -9,7 +9,7 @@
 		"hyprland/workspaces",
 		"custom/steam",
 		"custom/retroarch",
-		"custom/firefox",
+		"custom/browser",
 		"custom/fileman",
 		"custom/right-arrow-dark",
 		"custom/right-arrow-light",
@@ -28,8 +28,11 @@
 		"custom/left-arrow-light",
 		"custom/left-arrow-dark",
 		"pulseaudio",
+		"disk",
 		"memory",
+		"cpu",
 		"temperature",
+		"idle_inhibitor",
 		"tray",
 		"custom/power"
 	],
@@ -57,10 +60,10 @@
 		"tooltip-format": "Retroarch"
 	},
 
-	"custom/firefox" : {
-		"format": "  ",
-		"on-click": "firefox",
-		"tooltip-format": "Firefox"
+	"custom/browser" : {
+		"format": " 󰖟 ",
+		"on-click": "flatpak run app.zen_browser.zen",
+		"tooltip-format": "Web Browser"
 	},
 
 	"custom/steam" : {
@@ -80,8 +83,8 @@
 	"interval": 1200,
 	"exec": "~/.config/waybar/weather.py",
 //	"on-click": "firefox https://openweathermap.org/city/4833387 &",
-//	uncomment above line & comment below line, if mousam flatpak not installed
-	"on-click": "flatpak run io.github.amit9838.mousam &",
+//	uncomment above line & comment below line, if kweather not installed
+	"on-click": "kweather &",
 },	
 	"cava": {
                 //"cava_config": "$XDG_CONFIG_HOME/cava/cava.conf",
@@ -190,7 +193,7 @@
 	},
 	"cpu": {
 		"interval": 5,
-		"format": "CPU {usage:2}%"
+		"format": "  {usage:2}%"
 	},
 	"battery": {
 		"states": {
@@ -209,7 +212,7 @@
 	},
 	"disk": {
 		"interval": 5,
-		"format": "Disk {percentage_used:2}%",
+		"format": "  {percentage_used:2}%",
 		"path": "/"
 	},
 	"tray": {
@@ -227,6 +230,14 @@
         "format" : " ⏻ ",
 		"on-click": "~/.config/rofi/applets/bin/powermenu.sh"
         },
+
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": " ",
+            "deactivated": " "
+    }
+},
     "return-type": "json",
     "exec-if": "which swaync-client",
     "exec": "swaync-client -swb",

@@ -1,6 +1,6 @@
 * {
-	font-size: 18px;
-	font-family: MonofurNerdFont;
+	font-size: 17px;
+	font-family: AgaveNerdFont;
 	padding: 0;
 	margin: -1;
 }
@@ -59,7 +59,7 @@ window#waybar {
 	padding: 0 2px;
 	color: #b16286;
 }
-#custom-firefox {
+#custom-browser {
 	background: @theme_base_color;
 	padding: 0 2px;
 	color: #fe8019;
@@ -129,7 +129,7 @@ window#waybar {
 	padding: 0 10px;
 }
 #cpu {
-	color: #6c71c4;
+	color: #8f3f71;
 	padding: 0 10px;
 }
 #temperature {
@@ -143,12 +143,17 @@ window#waybar {
 	padding: 0 10px;
 }
 #disk {
-	color: #2aa198;
+	color: #98971a;
 	padding: 0 10px;
 }
 #pulseaudio {
 	color: #fabd2f;
 	padding: 0 10px;
+}
+#idle_inhibitor {
+	color: #458588;
+	padding: 0 10px;
+	background: @theme_base_color;
 }
 #custom-power {
 	color: @theme_text_color;
