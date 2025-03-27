@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/sh
 
 # This is the example configuration file for river.
 #
@@ -10,17 +10,17 @@
 
 # Note: the "Super" modifier is also known as Logo, GUI, Windows, Mod4, etc.
 
-riverctl spawn rivertile
-riverctl output-layout rivertile
-waybar &
 # Super+Shift+Return to start an instance of foot (https://codeberg.org/dnkl/foot)
-riverctl map normal Super Q spawn kitty
-riverctl map normal Super D spawn "rofi -show drun -show-icons"
+riverctl map normal Super Q spawn foot
+
 # Super+Q to close the focused view
 riverctl map normal Super C close
 
-# Super+Shift+E to exit river
-riverctl map normal Super M exit
+# Super+M to open power menu
+riverctl map normal Super M spawn ~/.config/rofi/applets/bin/powermenu.sh
+
+#Super+d open Rofi
+riverctl map normal Super D spawn ~/.config/rofi/launchers/type-1/launcher.sh
 
 # Super+J and Super+K to focus the next/previous view in the layout stack
 riverctl map normal Super J focus-view next
@@ -101,7 +101,7 @@ riverctl map normal Super 0 set-focused-tags $all_tags
 riverctl map normal Super+Shift 0 set-view-tags $all_tags
 
 # Super+Space to toggle float
-riverctl map normal Super Space toggle-float
+riverctl map normal Super+Shift Space toggle-float
 
 # Super+F to toggle fullscreen
 riverctl map normal Super F toggle-fullscreen
@@ -133,7 +133,8 @@ do
     riverctl map $mode None XF86AudioRaiseVolume  spawn 'pamixer -i 5'
     riverctl map $mode None XF86AudioLowerVolume  spawn 'pamixer -d 5'
     riverctl map $mode None XF86AudioMute         spawn 'pamixer --toggle-mute'
-
+    riverctl map normal Super Z spawn 'wpctl set-volume -l 1.4 @DEFAULT_AUDIO_SINK@ 5%-'
+    riverctl map normal Super X spawn 'wpctl set-volume -l 1.4 @DEFAULT_AUDIO_SINK@ 5%+'
     # Control MPRIS aware media players with playerctl (https://github.com/altdesktop/playerctl)
     riverctl map $mode None XF86AudioMedia spawn 'playerctl play-pause'
     riverctl map $mode None XF86AudioPlay  spawn 'playerctl play-pause'
@@ -146,7 +147,7 @@ do
 done
 
 # Set background and border color
-swaybg -i ~/Pictures/retic.jpg &
+riverctl background-color 0x002b36
 riverctl border-color-focused 0x93a1a1
 riverctl border-color-unfocused 0x586e75
 
@@ -163,3 +164,7 @@ riverctl rule-add -app-id "bar" csd
 # River will send the process group of the init executable SIGTERM on exit.
 riverctl default-layout rivertile
 rivertile -view-padding 6 -outer-padding 6 &
+swww-daemon &
+waybar &
+nm-applet &
+dunst &
