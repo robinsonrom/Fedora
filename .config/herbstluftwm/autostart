@@ -17,14 +17,23 @@ hc keyunbind --all
 # if you have a super key you will be much happier with Mod set to Mod4
 #Mod=Mod1    # Use alt as the main modifier
 Mod=Mod4   # Use the super key as the main modifier
-TERMINAL=ghostty
+TERMINAL=kitty
+fm=thunar
 
-hc keybind $Mod-m quit
+# Main Keybinds
+hc keybind $Mod-m spawn ~/.config/rofi/applets/bin/powermenui3.sh
 hc keybind $Mod-Shift-r reload
 hc keybind $Mod-c close
+hc keybind $Mod-Shift-c chain , close , remove
+hc keybind $Mod-Return spawn ptyxis 
 hc keybind $Mod-q spawn "${TERMINAL:-xterm}" # use your $TERMINAL with xterm as fallback
-hc keybind $Mod-d spawn rofi -show drun -show-icons
-hc keybind $Mod-w spawn firefox
+hc keybind $Mod-d spawn ~/.config/rofi/launchers/type-4/launcher.sh
+hc keybind $Mod-w spawn flatpak run com.vivaldi.Vivaldi
+hc keybind $Mod-Shift-w spawn flatpak run app.zen_browser.zen
+hc keybind $Mod-e spawn $fm
+hc keybind Print spawn ~/magick.sh
+hc keybind $Mod-Print spawm ~/magick-select.sh
+
 # basic movement in tiling and floating mode
 # focusing clients
 hc keybind $Mod-Left  focus left
@@ -48,8 +57,10 @@ hc keybind $Mod-Shift-l     shift right
 
 # splitting frames
 # create an empty frame at the specified direction
-hc keybind $Mod-u       split   bottom  0.5
-hc keybind $Mod-o       split   right   0.5
+hc keybind $Mod-u chain , split bottom 0.5 , focus down
+hc keybind $Mod-o chain , split right 0.5 , focus right
+hc keybind $Mod-Shift-u chain , split bottom 0.5 , shift down
+hc keybind $Mod-Shift-o chain , split right 0.5 , shift right
 # let the current frame explode into subframes
 hc keybind $Mod-Control-space split explode
 
@@ -112,42 +123,52 @@ hc keybind $Mod-Shift-Tab   cycle_all -1
 hc keybind $Mod-n cycle
 hc keybind $Mod-i jumpto urgent
 
+# Media Keys
+hc keybind XF86AudioRaiseVolume spawn pactl set-sink-volume @DEFAULT_SINK@ +5% &
+hc keybind XF86AudioLowerVolume spawn pactl set-sink-volume @DEFAULT_SINK@ -5% &
+hc keybind XF86AudioMute spawn pactl set-sink-mute @DEFAULT_SINK@ toggle &
+
+hc keybind XF86AudioPlay spawn playerctl play-pause
+hc keybind XF86AudioPause spawn playerctl play-pause
+hc keybind XF86AudioNext spawn playerctl next
+hc keybind XF86AudioPrev spawn playerctl previous
+
 # theme
 hc attr theme.tiling.reset 1
 hc attr theme.floating.reset 1
 hc set frame_border_active_color '#222222cc'
 hc set frame_border_normal_color '#101010cc'
 hc set frame_bg_normal_color '#565656aa'
-hc set frame_bg_active_color '#ebb580'
-hc set frame_border_width 1
+hc set frame_bg_active_color '#d79921'
+hc set frame_border_width 2
 hc set show_frame_decorations 'focused_if_multiple'
 hc set frame_bg_transparent on
-hc set frame_transparent_width 5
-hc set frame_gap 5
+hc set frame_transparent_width 1
+hc set frame_gap 10
 
 hc attr theme.title_height 15
-hc attr theme.title_when never
-hc attr theme.title_font 'Dejavu Sans:pixelsize=12'  # example using Xft
+hc attr theme.title_when always
+hc attr theme.title_font 'ComicShannsMonoNerdFont-Regular:pixelsize=14'  # example using Xft
 # hc attr theme.title_font '-*-fixed-medium-r-*-*-13-*-*-*-*-*-*-*'
 hc attr theme.title_depth 3  # space below the title's baseline
-hc attr theme.active.color '#345F0Cef'
-hc attr theme.title_color '#ffffff'
+hc attr theme.active.color '#665c54'
+hc attr theme.title_color '#d79921'
 hc attr theme.normal.color '#323232dd'
 hc attr theme.urgent.color '#7811A1dd'
 hc attr theme.tab_color '#1F1F1Fdd'
 hc attr theme.active.tab_color '#2B4F0Add'
 hc attr theme.active.tab_outer_color '#6C8257dd'
 hc attr theme.active.tab_title_color '#ababab'
-hc attr theme.normal.title_color '#898989'
+hc attr theme.normal.title_color '#a8998499'
 hc attr theme.inner_width 1
 hc attr theme.inner_color black
-hc attr theme.border_width 2
-hc attr theme.floating.border_width 4
+hc attr theme.border_width 1
+hc attr theme.floating.border_width 1
 hc attr theme.floating.outer_width 1
 hc attr theme.floating.outer_color black
-hc attr theme.active.inner_color '#cdad5d'
-hc attr theme.urgent.inner_color '#9A65B0'
-hc attr theme.normal.inner_color '#606060'
+hc attr theme.active.inner_color '#fabd2f'
+hc attr theme.urgent.inner_color '#d79921'
+hc attr theme.normal.inner_color '#282828'
 # copy inner color to outer_color
 for state in active urgent normal ; do
     hc substitute C theme.${state}.inner_color \
@@ -156,10 +177,10 @@ done
 hc attr theme.tiling.outer_width 1
 hc attr theme.background_color '#141414'
 
-hc set window_gap 0
+hc set window_gap 3
 hc set frame_padding 0
 hc set smart_window_surroundings off
-hc set smart_frame_surroundings on
+hc set smart_frame_surroundings off
 hc set mouse_recenter_gap 0
 
 # rules
@@ -174,6 +195,10 @@ hc rule windowtype~'_NET_WM_WINDOW_TYPE_(DIALOG|UTILITY|SPLASH)' floating=on
 hc rule windowtype='_NET_WM_WINDOW_TYPE_DIALOG' focus=on
 hc rule windowtype~'_NET_WM_WINDOW_TYPE_(NOTIFICATION|DOCK|DESKTOP)' manage=off
 hc rule fixedsize floating=on
+hc rule class='mousam' floating=on
+hc rule title='xeyes' floating=on
+hc rule class='kweather' floating=on
+hc rule class='feh' floating=on
 
 hc set tree_style '╾│ ├└╼─┐'
 
@@ -186,17 +211,19 @@ hc unlock
 # hc detect_monitors
 
 # find the panel
-panel=~/.config/herbstluftwm/panel.sh
-[ -x "$panel" ] || panel=/etc/xdg/herbstluftwm/panel.sh
-for monitor in $(hc list_monitors | cut -d: -f1) ; do
-    # start it on each monitor
-    "$panel" "$monitor" &
-done
+#panel=~/polybar.sh
+#[ -x "$panel" ] || panel=/etc/xdg/herbstluftwm/panel.sh
+#for monitor in $(hc list_monitors | cut -d: -f1) ; do
+#    # start it on each monitor
+#    "$panel" "$monitor" &
+#done
 
+~/polybar.sh
+nm-applet &
+blueman-applet &
 herbstclient detect_monitors &
-herbstclient pad 0 25 0 5 0
-herbstclient pad 1 25 0 5 0
-feh --bg-fill ~/Pictures/nasa/ap241228-cropped.jpg --bg-fill ~/Pictures/gruvbox_linux.png &
-~/polybar.sh &
+herbstclient set_layout grid &
+herbstclient set focus_follows_mouse true &
+feh --bg-fill ~/Pictures/elephant.jpg --bg-fill ~/Pictures/komodos.avif &
 picom -b &
-xscreensaver
+xscreensaver &

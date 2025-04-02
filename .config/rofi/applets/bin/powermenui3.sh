@@ -86,7 +86,7 @@ confirm_run () {
 # Execute Command
 run_cmd() {
 	if [[ "$1" == '--opt1' ]]; then
-		i3-msg exit
+		confirm_run 'pkill -KILL -u rob'
 	elif [[ "$1" == '--opt2' ]]; then
 		confirm_run 'mpv --pause' 'systemctl suspend'
 	elif [[ "$1" == '--opt3' ]]; then

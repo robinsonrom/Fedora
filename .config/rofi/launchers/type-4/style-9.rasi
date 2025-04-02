@@ -175,8 +175,8 @@ element normal.active {
     text-color:                  var(active-background);
 }
 element selected.normal {
-    background-color:            var(selected-normal-foreground);
-    text-color:                  var(selected-normal-background);
+    background-color:            #3c3836;
+    text-color:                  #fe8019;
 }
 element selected.urgent {
     background-color:            var(selected-urgent-foreground);
@@ -235,8 +235,8 @@ button {
     cursor:                      pointer;
 }
 button selected {
-    background-color:            var(selected-normal-background);
-    text-color:                  var(selected-normal-foreground);
+    background-color:            #3c3836;
+    text-color:                  #fe8019;
 }
 
 /*****----- Message -----*****/
