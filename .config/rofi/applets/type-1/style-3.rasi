@@ -26,16 +26,16 @@ window {
     location:                    center;
     anchor:                      center;
     fullscreen:                  false;
-    width:                       400px;
+    width:                       320px;
     x-offset:                    0px;
     y-offset:                    0px;
     margin:                      0px;
     padding:                     0px;
     border:                      1px solid;
-    border-radius:               30px;
-    border-color:                @selected;
+    border-radius:               20px;
+    border-color:                #d65d0e;
     cursor:                      "default";
-    background-color:            @background;
+    background-color:            #282828;
 }
 
 /*****----- Main Box -----*****/
@@ -147,6 +147,6 @@ element selected.urgent {
     text-color:                  var(background);
 }
 element selected.normal {
-    background-color:            var(selected);
-    text-color:                  var(background);
+    background-color:            #3c3836;
+    text-color:                  #d65d0e;
 }

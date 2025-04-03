@@ -24,20 +24,20 @@ fi
 # Options
 layout=`cat ${theme} | grep 'USE_ICON' | cut -d'=' -f2`
 if [[ "$layout" == 'NO' ]]; then
-	option_1=" Lock"
-	option_2=" Logout"
+	option_1="  Lock"
+	option_2="󰍃  Logout"
 	option_3=" Suspend"
-	option_4=" Reboot"
-	option_5=" Shutdown"
-	yes=' Yes'
-	no=' No'
+	option_4="󰜉  Reboot"
+	option_5="⏻  Shutdown"
+	yes='  Yes'
+	no='  No'
 else
-	option_1=" "
-	option_2=" "
+	option_1=" "
+	option_2="󰍃 "
 	option_3=" "
-	option_4=" "
-	option_5=" "
-	yes=' '
+	option_4="󰜉 "
+	option_5="⏻ "
+	yes=' '
 	no=' '
 fi
 
